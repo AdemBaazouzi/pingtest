@@ -157,7 +157,7 @@ clone_devops_projects()
             touch /home/ubuntu/.bash_profile
         fi
 
-        cd pingidentity-devops-getting-started
+        cd pingtest
         ./setup
         echo_green "Please note you will need to re-login for Docker permissions to take effect."
     fi

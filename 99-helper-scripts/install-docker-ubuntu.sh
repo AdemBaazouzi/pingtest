@@ -148,7 +148,7 @@ clone_devops_projects()
         mkdir -p $DIR_NAME
         cd $DIR_NAME
 
-        git clone "https://github.com/pingidentity/pingidentity-devops-getting-started.git" 
+        git clone "https://github.com/AdemBaazouzi/pingtest"
         git clone "https://github.com/pingidentity/pingidentity-docker-builds.git"
         git clone "https://github.com/pingidentity/pingidentity-server-profiles.git"
 

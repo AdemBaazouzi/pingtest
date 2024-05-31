@@ -1,0 +1,43 @@
+version: "2.4"
+# This server profile used as basis for ping-devop docker-launch
+
+#-------------------------------------------------------------------------------------
+#- Ping Identity PingFederate getting started demo
+#-
+#-                +---------------+
+#-                | PingFederate  |
+#-                +---------------+
+#-
+#- To access PingFederate Console
+#-
+#-    https://localhost:9999/pingfederate/app
+#-
+#-    Username: administrator
+#-    Password: 2FederateM0re
+#-------------------------------------------------------------------------------------
+
+services:
+  pingfederate:
+    image: ${PING_IDENTITY_DEVOPS_REGISTRY:-docker.io/pingidentity}/pingfederate:${PING_IDENTITY_DEVOPS_TAG:-edge}
+    # You may need to comment this tmpfs line if you run containers on windows
+    tmpfs: /run/secrets
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=getting-started/pingfederate
+      - PF_LDAP_USERNAME="Administrator"
+      - PF_LDAP_PASSWORD="2FederateM0re"
+    env_file:
+      - ${HOME}/.pingidentity/config
+    ports:
+      - "9031:9031"
+      - "9999:9999"
+    networks:
+      - pingnet
+    volumes:
+      - pingfederate-out:/opt/out
+
+networks:
+  pingnet:
+
+volumes:
+  pingfederate-out:

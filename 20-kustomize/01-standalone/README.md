@@ -1,0 +1,1 @@
+See [Orchestrate standalone deployments](../../docs/deployment/deployK8sStandalone.md) for more information.

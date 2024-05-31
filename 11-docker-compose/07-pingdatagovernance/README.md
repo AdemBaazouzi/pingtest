@@ -1,0 +1,1 @@
+See [Deploy PingDataGovernance with External Policy Administration Point](../../docs/deployment/deployPdgPap.md) for more information.

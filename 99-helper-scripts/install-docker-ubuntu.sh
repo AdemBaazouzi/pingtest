@@ -152,9 +152,9 @@ clone_devops_projects()
         git clone "https://github.com/pingidentity/pingidentity-docker-builds.git"
         git clone "https://github.com/pingidentity/pingidentity-server-profiles.git"
 
-        if [ ! -e /home/ubuntu/.bash_profile ]; then
-            echo_green "Creating bash_profile"
-            touch /home/ubuntu/.bash_profile
+        if [ ! -e /home/adem/.profile ]; then
+            echo_green "Creating profile"
+            touch /home/adem/.profile
         fi
 
         cd pingtest
